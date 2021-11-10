@@ -35,7 +35,6 @@ var interpreters = [
 
 struct ContentView: View {
     @State private var showWebView = false
-    @State private var searchText = ""
     var body: some View {
             TabView(selection: .constant(1)) {
                 NavigationView {
@@ -106,13 +105,7 @@ struct ContentView: View {
 //----------------------------------------------------------
                 //Interpreters Tab
                 NavigationView {
-                        VStack(alignment: .leading){
-                            
-                            SearchBar(text: $searchText)
-                                .multilineTextAlignment(.leading)
-                                    .navigationBarTitle("Interpreters")
-                            InterpreterList()
-                    }
+                    InterpretersView()
                 }.tabItem {
                     Image(systemName: "person.crop.circle")
                     Text("Interpreters") }.tag(3)

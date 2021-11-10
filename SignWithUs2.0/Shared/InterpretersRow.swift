@@ -26,11 +26,11 @@ struct InterpreterRow: View {
 
             Text(interpreter.name)
             
-            Spacer()
+            Spacer(minLength: 10)
             
             Text(interpreter.location)
 
-            Spacer()
+            Spacer(minLength: 10)
             
             Text(interpreter.earlDate)
 

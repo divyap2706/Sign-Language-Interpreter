@@ -25,6 +25,8 @@
 		317CC738273B3DFF0027A3F0 /* InterpretersRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317CC736273B3DFF0027A3F0 /* InterpretersRow.swift */; };
 		317CC73A273B463B0027A3F0 /* InterpreterList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317CC739273B463B0027A3F0 /* InterpreterList.swift */; };
 		317CC73B273B463B0027A3F0 /* InterpreterList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317CC739273B463B0027A3F0 /* InterpreterList.swift */; };
+		317CC73D273B6F4E0027A3F0 /* InterpretersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317CC73C273B6F4E0027A3F0 /* InterpretersView.swift */; };
+		317CC73E273B6F4E0027A3F0 /* InterpretersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317CC73C273B6F4E0027A3F0 /* InterpretersView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,7 @@
 		317CC733273B34030027A3F0 /* SearchTypeDropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTypeDropDown.swift; sourceTree = "<group>"; };
 		317CC736273B3DFF0027A3F0 /* InterpretersRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterpretersRow.swift; sourceTree = "<group>"; };
 		317CC739273B463B0027A3F0 /* InterpreterList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterpreterList.swift; sourceTree = "<group>"; };
+		317CC73C273B6F4E0027A3F0 /* InterpretersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterpretersView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +87,7 @@
 				317CC730273B2DDD0027A3F0 /* SearchBar.swift */,
 				317CC733273B34030027A3F0 /* SearchTypeDropDown.swift */,
 				317CC736273B3DFF0027A3F0 /* InterpretersRow.swift */,
+				317CC73C273B6F4E0027A3F0 /* InterpretersView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -216,6 +220,7 @@
 				317CC737273B3DFF0027A3F0 /* InterpretersRow.swift in Sources */,
 				314814BC2738454600E0D7FD /* Account.swift in Sources */,
 				317CC734273B34030027A3F0 /* SearchTypeDropDown.swift in Sources */,
+				317CC73D273B6F4E0027A3F0 /* InterpretersView.swift in Sources */,
 				317CC731273B2DDD0027A3F0 /* SearchBar.swift in Sources */,
 				314814AC2738309200E0D7FD /* ContentView.swift in Sources */,
 				314814AA2738309200E0D7FD /* SignWithUs2_0App.swift in Sources */,
@@ -231,6 +236,7 @@
 				317CC738273B3DFF0027A3F0 /* InterpretersRow.swift in Sources */,
 				314814BD2738454600E0D7FD /* Account.swift in Sources */,
 				317CC735273B34030027A3F0 /* SearchTypeDropDown.swift in Sources */,
+				317CC73E273B6F4E0027A3F0 /* InterpretersView.swift in Sources */,
 				317CC732273B2DDD0027A3F0 /* SearchBar.swift in Sources */,
 				314814AD2738309200E0D7FD /* ContentView.swift in Sources */,
 				314814AB2738309200E0D7FD /* SignWithUs2_0App.swift in Sources */,

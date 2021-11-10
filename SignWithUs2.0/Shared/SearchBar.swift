@@ -10,7 +10,7 @@ import SwiftUI
 
 struct SearchBar: View {
     @Binding var text: String
- 
+    @Binding var searchby: String
     @State private var isEditing = false
  
     var body: some View {
@@ -18,8 +18,9 @@ struct SearchBar: View {
             HStack{
             Spacer()
                 .frame(width: 200.0)
-                DropDown()}
-        HStack {
+                DropDown(searchby: $searchby)}
+            if (searchby != "") {
+            HStack {
 
             TextField("Search ...", text: $text)
                 .padding(7)
@@ -64,12 +65,15 @@ struct SearchBar: View {
                 .animation(.default)
             }
         }
+            
+            }
+            
         }
     }
 }
     
 struct SearchBar_Previews: PreviewProvider {
     static var previews: some View {
-        SearchBar(text: .constant(""))
+        SearchBar(text: .constant(""), searchby: .constant(""))
     }
 }

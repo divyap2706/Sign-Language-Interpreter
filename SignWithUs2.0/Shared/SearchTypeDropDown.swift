@@ -9,21 +9,21 @@ import Foundation
 import SwiftUI
 
 struct DropDown: View{
-    @State var value = ""
+    @Binding var searchby: String
     var placeholder = "Search By"
     var dropDownList = ["Location", "Name", "Earliest Appointment"]
     var body: some View {
         Menu {
             ForEach(dropDownList, id: \.self){ client in
                 Button(client) {
-                    self.value = client
+                    self.searchby = client
                 }
             }
         } label: {
             VStack(spacing: 5){
                 HStack{
-                    Text(value.isEmpty ? placeholder : value)
-                        .foregroundColor(value.isEmpty ? .gray : .black)
+                    Text(searchby.isEmpty ? placeholder : searchby)
+                        .foregroundColor(searchby.isEmpty ? .gray : .black)
                     Spacer()
                     Image(systemName: "chevron.down")
                         .foregroundColor(Color.gray)
@@ -39,7 +39,8 @@ struct DropDown: View{
 }
 
 struct SearchType_Previews: PreviewProvider {
+    
     static var previews: some View {
-        DropDown()
+        DropDown(searchby: .constant(""))
     }
 }
