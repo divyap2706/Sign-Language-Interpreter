@@ -14,8 +14,28 @@ var vGridLayout = [
     GridItem(.flexible())
 ]
 
+struct Interpreter: Hashable, Codable, Identifiable {
+    let name: String
+    let id = UUID()
+    let location: String
+    var imageName: String
+    var image: Image {
+        Image(imageName)
+    }
+    var earlDate: String
+}
+
+var interpreters = [
+    Interpreter(name: "Leo Ogden", location: "Brooklyn, NY", imageName: "Leo",earlDate: "12/22/2021"),
+    Interpreter(name: "Rachel Moon", location: "Boston, MA", imageName: "Rachel", earlDate: "12/01/2021"),
+    Interpreter(name: "Gail Smith", location: "San Diego, CA", imageName: "Gail", earlDate: "12/16/2021"),
+    Interpreter(name: "Sal DiMarco", location: "Tampa, FL", imageName: "Sal", earlDate: "11/10/2021"),
+    Interpreter(name: "Akanksa Patel", location: "Seattle, WA", imageName: "Ak", earlDate: "11/21/2021")
+]
+
 struct ContentView: View {
     @State private var showWebView = false
+    @State private var searchText = ""
     var body: some View {
             TabView(selection: .constant(1)) {
                 NavigationView {
@@ -46,17 +66,17 @@ struct ContentView: View {
                             VStack(alignment: .leading) {
                                 Text("Mark Parlatto").bold()}
                         }.padding(.bottom, 5.0)
-                        Text("Originating from Long Island, NY, with over 20 years of experience, he is the go-to ASL interpreter of the Tristate Area.").padding(.bottom, 5.0)
+                        Text("Originating from Long Island, NY, with over 20 years of experience, he is the go-to ASL interpreter of the Tristate Area.").padding(.bottom, 5.0).fixedSize(horizontal: false, vertical: true)
                         
                         //Featured News Section-------------
                         Text("Featured News").font(.title).multilineTextAlignment(.leading)
                         HStack {
                             Image("eternals").scaleEffect(0.5).frame(width: 100, height: 100).padding(.horizontal)
                             VStack(alignment: .leading) {
-                                Text("'Eternals' star Lauren Ridloff, Marvel's first deaf hero, on representation and access").bold().padding(.trailing)}
+                                Text("'Eternals' star Lauren Ridloff, Marvel's first deaf hero, on representation and access").bold().fixedSize(horizontal: false, vertical: true)}
                             .padding(.trailing)
                         }
-                        Text("\"[I] hope that, by bringing my story to the audience, people from marginalized communities will feel that there’s room for their own stories.\"")
+                        Text("\"[I] hope that, by bringing my story to the audience, people from marginalized communities will feel that there’s room for their own stories.\"").fixedSize(horizontal: false, vertical: true)
                         Button {
                             showWebView.toggle()
                         } label: {
@@ -74,21 +94,32 @@ struct ContentView: View {
                     Text("Home")}.tag(1)
 //----------------------------------------------------------
                 //Schedule Tab
-                Text("Scheudle").tabItem {
+                NavigationView {
+                    ScrollView{
+                        VStack(alignment: .leading){
+                            Text("Date").font(.title).multilineTextAlignment(.leading).navigationBarTitle("Schedule")
+                        }
+                    }
+                }.tabItem {
                     Image(systemName: "calendar.badge.clock")
                     Text("Scheudle") }.tag(2)
 //----------------------------------------------------------
                 //Interpreters Tab
-                Text("Interpreters").tabItem {
+                NavigationView {
+                        VStack(alignment: .leading){
+                            
+                            SearchBar(text: $searchText)
+                                .multilineTextAlignment(.leading)
+                                    .navigationBarTitle("Interpreters")
+                            InterpreterList()
+                    }
+                }.tabItem {
                     Image(systemName: "person.crop.circle")
                     Text("Interpreters") }.tag(3)
 //----------------------------------------------------------
                 //Learn Tab
                 Text("Learn").tabItem {
-                    Image("Learn 75")
-                        .renderingMode(.template)
-                        .resizable()
-                        .foregroundColor(Color.gray)
+                    Image(systemName: "book.fill")
                         
                     Text("Learn") }.tag(4)
             }

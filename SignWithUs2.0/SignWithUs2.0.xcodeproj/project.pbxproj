@@ -17,6 +17,14 @@
 		314814BA27383D0E00E0D7FD /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314814B827383D0E00E0D7FD /* WebView.swift */; };
 		314814BC2738454600E0D7FD /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314814BB2738454600E0D7FD /* Account.swift */; };
 		314814BD2738454600E0D7FD /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314814BB2738454600E0D7FD /* Account.swift */; };
+		317CC731273B2DDD0027A3F0 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317CC730273B2DDD0027A3F0 /* SearchBar.swift */; };
+		317CC732273B2DDD0027A3F0 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317CC730273B2DDD0027A3F0 /* SearchBar.swift */; };
+		317CC734273B34030027A3F0 /* SearchTypeDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317CC733273B34030027A3F0 /* SearchTypeDropDown.swift */; };
+		317CC735273B34030027A3F0 /* SearchTypeDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317CC733273B34030027A3F0 /* SearchTypeDropDown.swift */; };
+		317CC737273B3DFF0027A3F0 /* InterpretersRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317CC736273B3DFF0027A3F0 /* InterpretersRow.swift */; };
+		317CC738273B3DFF0027A3F0 /* InterpretersRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317CC736273B3DFF0027A3F0 /* InterpretersRow.swift */; };
+		317CC73A273B463B0027A3F0 /* InterpreterList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317CC739273B463B0027A3F0 /* InterpreterList.swift */; };
+		317CC73B273B463B0027A3F0 /* InterpreterList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317CC739273B463B0027A3F0 /* InterpreterList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +38,10 @@
 		314814A92738309200E0D7FD /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		314814B827383D0E00E0D7FD /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		314814BB2738454600E0D7FD /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		317CC730273B2DDD0027A3F0 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		317CC733273B34030027A3F0 /* SearchTypeDropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTypeDropDown.swift; sourceTree = "<group>"; };
+		317CC736273B3DFF0027A3F0 /* InterpretersRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterpretersRow.swift; sourceTree = "<group>"; };
+		317CC739273B463B0027A3F0 /* InterpreterList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterpreterList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,10 +76,14 @@
 			isa = PBXGroup;
 			children = (
 				314814972738309100E0D7FD /* SignWithUs2_0App.swift */,
+				317CC739273B463B0027A3F0 /* InterpreterList.swift */,
 				314814982738309100E0D7FD /* ContentView.swift */,
 				314814992738309200E0D7FD /* Assets.xcassets */,
 				314814B827383D0E00E0D7FD /* WebView.swift */,
 				314814BB2738454600E0D7FD /* Account.swift */,
+				317CC730273B2DDD0027A3F0 /* SearchBar.swift */,
+				317CC733273B34030027A3F0 /* SearchTypeDropDown.swift */,
+				317CC736273B3DFF0027A3F0 /* InterpretersRow.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -195,8 +211,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				317CC73A273B463B0027A3F0 /* InterpreterList.swift in Sources */,
 				314814B927383D0E00E0D7FD /* WebView.swift in Sources */,
+				317CC737273B3DFF0027A3F0 /* InterpretersRow.swift in Sources */,
 				314814BC2738454600E0D7FD /* Account.swift in Sources */,
+				317CC734273B34030027A3F0 /* SearchTypeDropDown.swift in Sources */,
+				317CC731273B2DDD0027A3F0 /* SearchBar.swift in Sources */,
 				314814AC2738309200E0D7FD /* ContentView.swift in Sources */,
 				314814AA2738309200E0D7FD /* SignWithUs2_0App.swift in Sources */,
 			);
@@ -206,8 +226,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				317CC73B273B463B0027A3F0 /* InterpreterList.swift in Sources */,
 				314814BA27383D0E00E0D7FD /* WebView.swift in Sources */,
+				317CC738273B3DFF0027A3F0 /* InterpretersRow.swift in Sources */,
 				314814BD2738454600E0D7FD /* Account.swift in Sources */,
+				317CC735273B34030027A3F0 /* SearchTypeDropDown.swift in Sources */,
+				317CC732273B2DDD0027A3F0 /* SearchBar.swift in Sources */,
 				314814AD2738309200E0D7FD /* ContentView.swift in Sources */,
 				314814AB2738309200E0D7FD /* SignWithUs2_0App.swift in Sources */,
 			);
@@ -267,6 +291,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -320,6 +345,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
