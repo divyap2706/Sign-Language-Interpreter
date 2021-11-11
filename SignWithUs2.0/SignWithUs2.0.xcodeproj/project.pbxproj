@@ -27,6 +27,8 @@
 		317CC73B273B463B0027A3F0 /* InterpreterList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317CC739273B463B0027A3F0 /* InterpreterList.swift */; };
 		317CC73D273B6F4E0027A3F0 /* InterpretersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317CC73C273B6F4E0027A3F0 /* InterpretersView.swift */; };
 		317CC73E273B6F4E0027A3F0 /* InterpretersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317CC73C273B6F4E0027A3F0 /* InterpretersView.swift */; };
+		31E20269273CA91400471E69 /* InterpreterDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E20268273CA91400471E69 /* InterpreterDetail.swift */; };
+		31E2026A273CA91400471E69 /* InterpreterDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E20268273CA91400471E69 /* InterpreterDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +47,7 @@
 		317CC736273B3DFF0027A3F0 /* InterpretersRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterpretersRow.swift; sourceTree = "<group>"; };
 		317CC739273B463B0027A3F0 /* InterpreterList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterpreterList.swift; sourceTree = "<group>"; };
 		317CC73C273B6F4E0027A3F0 /* InterpretersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterpretersView.swift; sourceTree = "<group>"; };
+		31E20268273CA91400471E69 /* InterpreterDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterpreterDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				314814972738309100E0D7FD /* SignWithUs2_0App.swift */,
+				31E20268273CA91400471E69 /* InterpreterDetail.swift */,
 				317CC739273B463B0027A3F0 /* InterpreterList.swift */,
 				314814982738309100E0D7FD /* ContentView.swift */,
 				314814992738309200E0D7FD /* Assets.xcassets */,
@@ -218,6 +222,7 @@
 				317CC73A273B463B0027A3F0 /* InterpreterList.swift in Sources */,
 				314814B927383D0E00E0D7FD /* WebView.swift in Sources */,
 				317CC737273B3DFF0027A3F0 /* InterpretersRow.swift in Sources */,
+				31E20269273CA91400471E69 /* InterpreterDetail.swift in Sources */,
 				314814BC2738454600E0D7FD /* Account.swift in Sources */,
 				317CC734273B34030027A3F0 /* SearchTypeDropDown.swift in Sources */,
 				317CC73D273B6F4E0027A3F0 /* InterpretersView.swift in Sources */,
@@ -234,6 +239,7 @@
 				317CC73B273B463B0027A3F0 /* InterpreterList.swift in Sources */,
 				314814BA27383D0E00E0D7FD /* WebView.swift in Sources */,
 				317CC738273B3DFF0027A3F0 /* InterpretersRow.swift in Sources */,
+				31E2026A273CA91400471E69 /* InterpreterDetail.swift in Sources */,
 				314814BD2738454600E0D7FD /* Account.swift in Sources */,
 				317CC735273B34030027A3F0 /* SearchTypeDropDown.swift in Sources */,
 				317CC73E273B6F4E0027A3F0 /* InterpretersView.swift in Sources */,

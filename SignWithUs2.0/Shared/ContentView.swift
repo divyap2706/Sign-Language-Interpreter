@@ -81,6 +81,7 @@ struct ContentView: View {
                         } label: {
                             Text("Read More...").padding(.top, 1.0)
                         }
+                        .padding(.bottom)
                         .sheet(isPresented: $showWebView) {
                             WebView(url: URL(string: "https://www.nbcnews.com/pop-culture/pop-culture-news/eternals-star-lauren-ridloff-marvels-first-deaf-hero-representation-ac-rcna4661")!)
                         }}
