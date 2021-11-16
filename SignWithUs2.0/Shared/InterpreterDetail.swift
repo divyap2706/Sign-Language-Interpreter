@@ -5,11 +5,11 @@
 //  Created by Maximilian Christ on 11/10/21.
 //
 
-import Foundation
 import SwiftUI
 
 
 struct InterpreterDetail: View {
+    var interpreter: Interpreter
     @State private var dummyVar = false
     var body: some View {
         ScrollView{
@@ -17,16 +17,20 @@ struct InterpreterDetail: View {
                 HStack{
                     Spacer()
                         //.frame(width: 11.0)
-                    Text("10+ Years of Experience").bold().fixedSize(horizontal: false, vertical: true).multilineTextAlignment(.leading)
+                    Text(String(interpreter.yrsExper) + " Years of Experience").bold().fixedSize(horizontal: false, vertical: true).multilineTextAlignment(.leading)
                     //Spacer()
-                    Image("Leo").resizable().frame(width: 150, height: 150)
+                    Image(interpreter.imageName).resizable().frame(width: 150, height: 150)
                     Spacer()
                     //Text("4.5").bold().fixedSize(horizontal: false, vertical: true).multilineTextAlignment(.leading)
-                    Image(systemName: "star.fill").resizable().frame(width: 12, height: 12)
-                    Image(systemName: "star.fill").resizable().frame(width: 12, height: 12)
-                    Image(systemName: "star.fill").resizable().frame(width: 12, height: 12)
-                    Image(systemName: "star.fill").resizable().frame(width: 12, height: 12)
-                    Image(systemName: "star").resizable().frame(width: 12, height: 12)
+                    VStack{
+                        HStack{
+                            Image(systemName: starType(starInd: 1, numStars: interpreter.rating)).resizable().frame(width: 12, height: 12)
+                    Image(systemName: starType(starInd: 2, numStars: interpreter.rating)).resizable().frame(width: 12, height: 12)
+                    Image(systemName: starType(starInd: 3, numStars: interpreter.rating)).resizable().frame(width: 12, height: 12)
+                    Image(systemName: starType(starInd: 4, numStars: interpreter.rating)).resizable().frame(width: 12, height: 12)
+                    Image(systemName: starType(starInd: 5, numStars: interpreter.rating)).resizable().frame(width: 12, height: 12)}
+                        Text(String(interpreter.numRatings) + " Ratings")
+                    }
                     Spacer()
                     
                     //
@@ -34,26 +38,26 @@ struct InterpreterDetail: View {
                 
                 HStack{
                     Spacer()
-                    Text("Leo Ogden").bold().font(.title2)
+                    Text(interpreter.name).bold().font(.title2)
                     Spacer()
                 }
                 .padding(.bottom)
                 
                 Text("Bio").bold().font(.title2).padding(.leading)
                 
-                Text("Born to a deaf mother, Leo learned American Sign Language at a very young age. He has always been very involeved in the deaf community, and after attending college to train as an interpreter, he continues to help in a professional capacity. He now lives in Brooklyn, NY, and has worked many large profile events across the NYC metro area.").padding([.leading, .bottom])
+                Text(interpreter.bio).padding([.leading, .bottom])
                 
                 Text("City").bold().font(.title2).padding(.leading)
                 
-                Text("Brooklyn, NY").padding([.leading, .bottom])
+                Text(interpreter.location).padding([.leading, .bottom])
                 
                 Text("Earliest Available Appointment").bold().font(.title2).padding(.leading)
                 
-                Text("12/22/2021").padding([.leading, .bottom])
+                Text(interpreter.earlDate).padding([.leading, .bottom])
                 
                 Text("Typical Availability").bold().font(.title2).padding(.leading)
                 
-                Text("Monday - Friday, 7am - 8pm").padding([.leading, .bottom])
+                Text(interpreter.typicalAvailibility).padding([.leading, .bottom])
 
             }
             HStack{
@@ -84,12 +88,33 @@ struct InterpreterDetail: View {
     }
 }
 
+func starType(starInd: Int, numStars: Float) -> String {
+    let flooredNumStars = floor(numStars)
+    if abs(numStars - flooredNumStars) > 0 {
+        // Cases when numStars is a float
+        if starInd <= Int(flooredNumStars) {
+            return "star.fill"
+        } else if starInd == Int(flooredNumStars) + 1 {
+            //change this to the updated icon in xcode 13 "star.leadinghalf.filled"
+            return "star"
+        } else {
+            return "star"
+        }
+    } else {
+        // Cases when numStars is an integer
+        if starInd <= Int(flooredNumStars) {
+            return "star.fill"
+        } else {
+            return "star"
+        }
+    }
+}
 
 struct InterpreterDetail_Previews: PreviewProvider {
 
     static var previews: some View {
 
-        InterpreterDetail()
+        InterpreterDetail(interpreter: interpreters[0])
 
     }
 

@@ -35,7 +35,7 @@ struct InterpretersView: View {
             else if (searchby == "Earliest Appointment"){return $0.earlDate.contains(searchText)}
             else{return true}
             })) { interpreter in
-                NavigationLink(destination: InterpreterDetail()) {
+                NavigationLink(destination: InterpreterDetail(interpreter: interpreter)) {
                 InterpreterRow(interpreter: interpreter)
                 }
             }
