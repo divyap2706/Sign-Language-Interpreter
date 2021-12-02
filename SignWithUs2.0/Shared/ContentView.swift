@@ -53,6 +53,7 @@ var interpreters = [
 struct ContentView: View {
     @State private var showWebView = false
     var body: some View {
+        //NavigationView {
             TabView(selection: .constant(1)) {
                 NavigationView {
                     
@@ -107,7 +108,7 @@ struct ContentView: View {
                             WebView(url: URL(string: "https://www.nbcnews.com/pop-culture/pop-culture-news/eternals-star-lauren-ridloff-marvels-first-deaf-hero-representation-ac-rcna4661")!)
                         }}
                             .padding(.trailing)
-                }// put closiing bracket here for scroll view
+                }// put closing bracket here for scroll view
                     .padding(.leading, 12.0).navigationBarItems( trailing: NavigationLink(destination: Account()) {
                         Text("Account")
                     })
@@ -138,7 +139,7 @@ struct ContentView: View {
                     Image(systemName: "book.fill")
                         
                     Text("Learn") }.tag(4)
-            }
+            } //Nav stuf can go here
         }
     }
 

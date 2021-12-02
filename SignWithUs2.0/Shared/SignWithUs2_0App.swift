@@ -11,7 +11,7 @@ import SwiftUI
 struct SignWithUs2_0App: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            StartPage()
         }
     }
 }
