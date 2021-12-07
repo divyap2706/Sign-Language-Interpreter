@@ -65,22 +65,22 @@ struct InterpreterDetail: View {
                 dummyVar = true
             } label: {
                 Text("Book Now").bold()
-            }.foregroundColor(.blue)
+            }.foregroundColor(Color(red: 112.0/256.0, green: 48.0/256.0, blue: 160.0/256.0, opacity: 1.0))
             .padding()
             .overlay(
                 RoundedRectangle(cornerRadius: 20)
-                    .stroke(Color.blue, lineWidth: 1)
+                    .stroke(Color(red: 112.0/256.0, green: 48.0/256.0, blue: 160.0/256.0, opacity: 1.0), lineWidth: 1)
             )
             
             Button {
                 dummyVar = true
             } label: {
                 Text("Rate").bold().padding(.horizontal)
-            }.foregroundColor(.blue)
+            }.foregroundColor(Color(red: 112.0/256.0, green: 48.0/256.0, blue: 160.0/256.0, opacity: 1.0))
             .padding()
             .overlay(
                 RoundedRectangle(cornerRadius: 20)
-                    .stroke(Color.blue, lineWidth: 1)
+                    .stroke(Color(red: 112.0/256.0, green: 48.0/256.0, blue: 160.0/256.0, opacity: 1.0), lineWidth: 1)
             )
             }.padding(.bottom)
             

@@ -14,6 +14,22 @@ var vGridLayout = [
     GridItem(.flexible())
 ]
 
+struct Word:Hashable, Codable, Identifiable {
+    let word_val:String
+    var id = UUID()
+    let image_path:String
+}
+
+var words=[
+    Word(word_val:"afternoon", image_path: "afternoon"),
+    Word(word_val:"before", image_path: "before"),
+    Word(word_val:"buy", image_path: "buy"),
+    Word(word_val:"doctor", image_path: "doctor"),
+    Word(word_val:"drink", image_path: "drink"),
+    Word(word_val:"finish", image_path: "finish"),
+    Word(word_val:"hour", image_path: "hour")
+]
+
 struct Appointment: Hashable, Codable, Identifiable {
     let date: String
     var id = UUID()
@@ -52,16 +68,18 @@ var interpreters = [
 
 struct ContentView: View {
     @State private var showWebView = false
+    init() {
+        //Use this if NavigationBarTitle is with Large Font
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.init(displayP3Red: 112.0/256.0, green: 48.0/256.0, blue: 160.0/256.0, alpha: 1.0)]}
     var body: some View {
-        //NavigationView {
-            TabView(selection: .constant(1)) {
+            TabView(selection: .constant(1))      {
                 NavigationView {
                     
                     ScrollView{
                         VStack(alignment: .leading) {
                         
                         //Upcoming Appointments Secion------
-                            Text("Upcoming Appointments").font(.title).multilineTextAlignment(.leading).padding(.bottom, 1.0).navigationBarTitle("Home")
+                            Text("Upcoming Appointments").font(.title).foregroundColor(Color(red: 112.0/256.0, green: 48.0/256.0, blue: 160.0/256.0, opacity: 1.0)).multilineTextAlignment(.leading).padding(.bottom, 1.0).navigationBarTitle("Home")
                         
                             HStack{
                                 //Spacer(minLength: 15)
@@ -80,7 +98,7 @@ struct ContentView: View {
                             }.padding([.top, .bottom, .trailing], 10).frame(height: 152.0)
                             
                         //Featured Interpreter Section------
-                        Text("Featured Interpreter").font(.title).multilineTextAlignment(.leading)
+                        Text("Featured Interpreter").font(.title).foregroundColor(Color(red: 112.0/256.0, green: 48.0/256.0, blue: 160.0/256.0, opacity: 1.0)).multilineTextAlignment(.leading)
                         
                         HStack {
                             Image("Interpreter_photo").scaleEffect(0.5).frame(width: 100, height: 100).padding(.horizontal)
@@ -90,7 +108,7 @@ struct ContentView: View {
                         Text("Originating from Long Island, NY, with over 20 years of experience, he is the go-to ASL interpreter of the Tristate Area.").padding(.bottom, 5.0).fixedSize(horizontal: false, vertical: true)
                         
                         //Featured News Section-------------
-                        Text("Featured News").font(.title).multilineTextAlignment(.leading)
+                        Text("Featured News").font(.title).foregroundColor(Color(red: 112.0/256.0, green: 48.0/256.0, blue: 160.0/256.0, opacity: 1.0)).multilineTextAlignment(.leading)
                         HStack {
                             Image("eternals").scaleEffect(0.5).frame(width: 100, height: 100).padding(.horizontal)
                             VStack(alignment: .leading) {
@@ -110,19 +128,16 @@ struct ContentView: View {
                             .padding(.trailing)
                 }// put closing bracket here for scroll view
                     .padding(.leading, 12.0).navigationBarItems( trailing: NavigationLink(destination: Account()) {
-                        Text("Account")
+                        Text("Account").foregroundColor(Color(red: 112.0/256.0, green: 48.0/256.0, blue: 160.0/256.0, opacity: 1.0))
                     })
                 }.tabItem {
                     Image(systemName: "house.fill")
-                    Text("Home")}.tag(1)
+                    Text("Home") }.tag(1)
 //----------------------------------------------------------
                 //Schedule Tab
                 NavigationView {
-                    ScrollView{
-                        VStack(alignment: .leading){
-                            Text("Date").font(.title).multilineTextAlignment(.leading).navigationBarTitle("Schedule")
-                        }
-                    }
+                    ScheduleView().navigationBarTitle("Schedule")
+
                 }.tabItem {
                     Image(systemName: "calendar.badge.clock")
                     Text("Scheudle") }.tag(2)
@@ -135,11 +150,29 @@ struct ContentView: View {
                     Text("Interpreters") }.tag(3)
 //----------------------------------------------------------
                 //Learn Tab
-                Text("Learn").tabItem {
-                    Image(systemName: "book.fill")
-                        
-                    Text("Learn") }.tag(4)
-            } //Nav stuf can go here
+                NavigationView {
+                                   ScrollView{
+                                           VStack(alignment: .leading) {
+                                           
+                                           //Upcoming Appointments Secion------
+                                               Text("Sign Language Dictionary").font(.title)  .foregroundColor(Color(red: 112.0/256.0, green: 48.0/256.0, blue: 160.0/256.0, opacity: 1.0)).multilineTextAlignment(.leading).padding(.bottom, 1.0).navigationBarTitle("Learn")
+                                           
+                                               
+                                               List (words) { word in
+                                                   NavigationLink(destination: WordDetail(word: word)) {
+                                                   WordRow(word: word)
+                                                   }
+
+                                               }.padding([.top, .bottom, .trailing], 10).frame(height: 400.0)
+                                           
+                                               
+                                           }.padding(.trailing)
+                                   }.padding(.leading, 12.0)
+                               }.tabItem {
+                                   Image(systemName: "book.fill")
+                                       
+                                   Text("Learn") }.tag(4)
+            }.accentColor(Color(red: 112.0/256.0, green: 48.0/256.0, blue: 160.0/256.0, opacity: 1.0)) //Nav stuf can go here
         }
     }
 
