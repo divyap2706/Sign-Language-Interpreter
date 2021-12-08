@@ -9,8 +9,18 @@ import SwiftUI
 
 
 struct InterpreterDetail: View {
+    @Binding var fromScheduleTab: Bool
     var interpreter: Interpreter
     @State private var dummyVar = false
+    
+    private func bookButtonTitle(fromScheduleTab:Bool) -> String {
+        if fromScheduleTab == false {
+            return "Book Now"
+            } else {
+             return "Select Interpreter"
+            }
+    }
+    
     var body: some View {
         ScrollView{
             VStack(alignment: .leading) {
@@ -61,27 +71,38 @@ struct InterpreterDetail: View {
 
             }
             HStack{
-            Button {
-                dummyVar = true
-            } label: {
-                Text("Book Now").bold()
-            }.foregroundColor(Color(red: 112.0/256.0, green: 48.0/256.0, blue: 160.0/256.0, opacity: 1.0))
-            .padding()
-            .overlay(
-                RoundedRectangle(cornerRadius: 20)
-                    .stroke(Color(red: 112.0/256.0, green: 48.0/256.0, blue: 160.0/256.0, opacity: 1.0), lineWidth: 1)
-            )
+            if fromScheduleTab {
+            NavigationLink(destination: BookingSummary()){
+                Text(self.bookButtonTitle(fromScheduleTab: fromScheduleTab)).font(.headline)
+                    .foregroundColor(.white)
+                    .padding()
+                    .frame(width: 320, height: 60)
+                    .background(Color(red: 112.0/256.0, green: 48.0/256.0, blue: 160.0/256.0, opacity: 1.0))
+                    .cornerRadius(15.0)
+            }
+            } else {
+                NavigationLink(destination: ContentView()){
+                    Text(self.bookButtonTitle(fromScheduleTab: fromScheduleTab)).font(.headline)
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(width: 320, height: 60)
+                        .background(Color(red: 112.0/256.0, green: 48.0/256.0, blue: 160.0/256.0, opacity: 1.0))
+                        .cornerRadius(15.0)
+                }
+            }
             
-            Button {
-                dummyVar = true
-            } label: {
-                Text("Rate").bold().padding(.horizontal)
-            }.foregroundColor(Color(red: 112.0/256.0, green: 48.0/256.0, blue: 160.0/256.0, opacity: 1.0))
-            .padding()
-            .overlay(
-                RoundedRectangle(cornerRadius: 20)
-                    .stroke(Color(red: 112.0/256.0, green: 48.0/256.0, blue: 160.0/256.0, opacity: 1.0), lineWidth: 1)
-            )
+
+
+//            Button {
+//                dummyVar = true
+//            } label: {
+//                Text("Rate").bold().padding(.horizontal)
+//            }.foregroundColor(Color(red: 112.0/256.0, green: 48.0/256.0, blue: 160.0/256.0, opacity: 1.0))
+//            .padding()
+//            .overlay(
+//                RoundedRectangle(cornerRadius: 20)
+//                    .stroke(Color(red: 112.0/256.0, green: 48.0/256.0, blue: 160.0/256.0, opacity: 1.0), lineWidth: 1)
+//            )
             }.padding(.bottom)
             
         }
@@ -114,7 +135,7 @@ struct InterpreterDetail_Previews: PreviewProvider {
 
     static var previews: some View {
 
-        InterpreterDetail(interpreter: interpreters[0])
+        InterpreterDetail(fromScheduleTab: .constant(false),interpreter: interpreters[0])
 
     }
 

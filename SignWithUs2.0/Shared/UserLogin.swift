@@ -30,10 +30,14 @@ struct UserLogin: View {
             SecureField("Password", text: $password).padding().cornerRadius(5.0).padding(.bottom, 20)
             HStack{
                 Spacer()
-                Text("Forgot Password?")
-                    .font(.headline)
-                    .foregroundColor(Color(red: 112.0/256.0, green: 48.0/256.0, blue: 160.0/256.0, opacity: 1.0))
-                    .padding()
+                Button {
+                    currpage = "Forgot"
+                } label: {
+                    Text("Forgot Password?")
+                        .font(.headline)
+                        .foregroundColor(Color(red: 112.0/256.0, green: 48.0/256.0, blue: 160.0/256.0, opacity: 1.0))
+                        .padding()
+                }
             }
             Spacer()
             //NavigationLink(destination: ContentView()) {

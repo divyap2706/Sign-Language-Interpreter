@@ -53,6 +53,14 @@
 		31900C532758688600E006EC /* UserLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31900C4E2758688600E006EC /* UserLogin.swift */; };
 		31900C542758688600E006EC /* UserSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31900C4F2758688600E006EC /* UserSignUp.swift */; };
 		31900C552758688600E006EC /* UserSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31900C4F2758688600E006EC /* UserSignUp.swift */; };
+		31C2D4B12760232200331CA7 /* UserForgotWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C2D4B02760232200331CA7 /* UserForgotWrapper.swift */; };
+		31C2D4B22760232200331CA7 /* UserForgotWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C2D4B02760232200331CA7 /* UserForgotWrapper.swift */; };
+		31C2D4B42760245000331CA7 /* UserForgot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C2D4B32760245000331CA7 /* UserForgot.swift */; };
+		31C2D4B52760245000331CA7 /* UserForgot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C2D4B32760245000331CA7 /* UserForgot.swift */; };
+		31C2D4B72760278500331CA7 /* PassResetSent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C2D4B62760278500331CA7 /* PassResetSent.swift */; };
+		31C2D4B82760278500331CA7 /* PassResetSent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C2D4B62760278500331CA7 /* PassResetSent.swift */; };
+		31C2D4BA2760656300331CA7 /* BookingSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C2D4B92760656300331CA7 /* BookingSummary.swift */; };
+		31C2D4BB2760656300331CA7 /* BookingSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C2D4B92760656300331CA7 /* BookingSummary.swift */; };
 		31E20269273CA91400471E69 /* InterpreterDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E20268273CA91400471E69 /* InterpreterDetail.swift */; };
 		31E2026A273CA91400471E69 /* InterpreterDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E20268273CA91400471E69 /* InterpreterDetail.swift */; };
 /* End PBXBuildFile section */
@@ -86,6 +94,10 @@
 		31900C4D2758688600E006EC /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		31900C4E2758688600E006EC /* UserLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLogin.swift; sourceTree = "<group>"; };
 		31900C4F2758688600E006EC /* UserSignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSignUp.swift; sourceTree = "<group>"; };
+		31C2D4B02760232200331CA7 /* UserForgotWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserForgotWrapper.swift; sourceTree = "<group>"; };
+		31C2D4B32760245000331CA7 /* UserForgot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserForgot.swift; sourceTree = "<group>"; };
+		31C2D4B62760278500331CA7 /* PassResetSent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassResetSent.swift; sourceTree = "<group>"; };
+		31C2D4B92760656300331CA7 /* BookingSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingSummary.swift; sourceTree = "<group>"; };
 		31E20268273CA91400471E69 /* InterpreterDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterpreterDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -144,6 +156,10 @@
 				3109FDEE275884EB0051B9DC /* StartPage.swift */,
 				310F00F8275986BF00ED2934 /* ScheduleView.swift */,
 				311632CA275EEDB9003D5EC0 /* ScheduleLocationView.swift */,
+				31C2D4B02760232200331CA7 /* UserForgotWrapper.swift */,
+				31C2D4B32760245000331CA7 /* UserForgot.swift */,
+				31C2D4B62760278500331CA7 /* PassResetSent.swift */,
+				31C2D4B92760656300331CA7 /* BookingSummary.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -272,13 +288,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				310F0100275C472E00ED2934 /* WordDetail.swift in Sources */,
+				31C2D4B42760245000331CA7 /* UserForgot.swift in Sources */,
 				310F00FE275C472E00ED2934 /* WordRow.swift in Sources */,
 				31900C542758688600E006EC /* UserSignUp.swift in Sources */,
+				31C2D4B12760232200331CA7 /* UserForgotWrapper.swift in Sources */,
 				3121A77A27433A1B00084882 /* AppointmentDetail.swift in Sources */,
 				314814B927383D0E00E0D7FD /* WebView.swift in Sources */,
 				3121A777274337E800084882 /* AppointmentRow.swift in Sources */,
 				317CC737273B3DFF0027A3F0 /* InterpretersRow.swift in Sources */,
 				31E20269273CA91400471E69 /* InterpreterDetail.swift in Sources */,
+				31C2D4B72760278500331CA7 /* PassResetSent.swift in Sources */,
 				314814BC2738454600E0D7FD /* Account.swift in Sources */,
 				3109FDEF275884EB0051B9DC /* StartPage.swift in Sources */,
 				317CC734273B34030027A3F0 /* SearchTypeDropDown.swift in Sources */,
@@ -292,6 +311,7 @@
 				3121A78327434FAC00084882 /* AppointmentDetailViewStatic.swift in Sources */,
 				3121A78027434E4800084882 /* AppointmentDetailButtons.swift in Sources */,
 				311632CB275EEDB9003D5EC0 /* ScheduleLocationView.swift in Sources */,
+				31C2D4BA2760656300331CA7 /* BookingSummary.swift in Sources */,
 				314814AA2738309200E0D7FD /* SignWithUs2_0App.swift in Sources */,
 				310F00F9275986BF00ED2934 /* ScheduleView.swift in Sources */,
 			);
@@ -302,13 +322,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				310F0101275C472E00ED2934 /* WordDetail.swift in Sources */,
+				31C2D4B52760245000331CA7 /* UserForgot.swift in Sources */,
 				310F00FF275C472E00ED2934 /* WordRow.swift in Sources */,
 				31900C552758688600E006EC /* UserSignUp.swift in Sources */,
+				31C2D4B22760232200331CA7 /* UserForgotWrapper.swift in Sources */,
 				3121A77B27433A1B00084882 /* AppointmentDetail.swift in Sources */,
 				314814BA27383D0E00E0D7FD /* WebView.swift in Sources */,
 				3121A778274337E800084882 /* AppointmentRow.swift in Sources */,
 				317CC738273B3DFF0027A3F0 /* InterpretersRow.swift in Sources */,
 				31E2026A273CA91400471E69 /* InterpreterDetail.swift in Sources */,
+				31C2D4B82760278500331CA7 /* PassResetSent.swift in Sources */,
 				314814BD2738454600E0D7FD /* Account.swift in Sources */,
 				3109FDF0275884EB0051B9DC /* StartPage.swift in Sources */,
 				317CC735273B34030027A3F0 /* SearchTypeDropDown.swift in Sources */,
@@ -322,6 +345,7 @@
 				3121A78427434FAC00084882 /* AppointmentDetailViewStatic.swift in Sources */,
 				3121A78127434E4800084882 /* AppointmentDetailButtons.swift in Sources */,
 				311632CC275EEDB9003D5EC0 /* ScheduleLocationView.swift in Sources */,
+				31C2D4BB2760656300331CA7 /* BookingSummary.swift in Sources */,
 				314814AB2738309200E0D7FD /* SignWithUs2_0App.swift in Sources */,
 				310F00FA275986BF00ED2934 /* ScheduleView.swift in Sources */,
 			);

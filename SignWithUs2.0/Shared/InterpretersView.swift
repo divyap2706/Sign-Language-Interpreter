@@ -9,17 +9,27 @@ import Foundation
 import SwiftUI
 
 
+
 struct InterpretersView: View {
+    @Binding var fromScheduleTab: Bool
     @State private var searchText = ""
     @State private var searchby = ""
     
+    private func navBarTitle(fromScheduleTab:Bool) -> String {
+        if fromScheduleTab == false {
+            return "Interpreters"
+            } else {
+             return "Select an Interpreter"
+            }
+    }
     //@State var searchby = ""
     var body: some View {
+        
         VStack(alignment: .leading){
             
             SearchBar(text: $searchText, searchby: $searchby)
                 .multilineTextAlignment(.leading)
-                .navigationBarTitle("Interpreters").padding(.bottom, 3.0)
+                .navigationBarTitle(self.navBarTitle(fromScheduleTab: fromScheduleTab)).padding(.bottom, 3.0)
             
             HStack{
                 Spacer(minLength: 25)
@@ -35,7 +45,7 @@ struct InterpretersView: View {
             else if (searchby == "Earliest Appointment"){return $0.earlDate.contains(searchText)}
             else{return true}
             })) { interpreter in
-                NavigationLink(destination: InterpreterDetail(interpreter: interpreter)) {
+                NavigationLink(destination: InterpreterDetail(fromScheduleTab: $fromScheduleTab, interpreter: interpreter)) {
                 InterpreterRow(interpreter: interpreter)
                 }
             }
@@ -51,7 +61,7 @@ struct InterpretersView_Previews: PreviewProvider {
 
     static var previews: some View {
 
-        InterpretersView()
+        InterpretersView(fromScheduleTab: .constant(false))
 
     }
 

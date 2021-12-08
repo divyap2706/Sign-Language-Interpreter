@@ -14,7 +14,9 @@ struct StartPage: View {
             loginView(currpage: $currpage)
         } else if currpage == "Login" {
             UserLoginWrapper(currpage: $currpage)
-        } else {
+        } else if currpage == "Forgot" {
+            UserForgotWrapper(currpage: $currpage)
+        }else {
             UserSignUp(currpage: $currpage)
         }
     }

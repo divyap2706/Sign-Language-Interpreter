@@ -59,15 +59,26 @@ struct Interpreter: Hashable, Codable, Identifiable {
 }
 
 var interpreters = [
-    Interpreter(name: "Leo Ogden", location: "Brooklyn, NY", imageName: "Leo",yrsExper: 10, earlDate: "12/22/2021", typicalAvailibility: "Monday - Thursday, 9am - 10pm", rating: 4.3, numRatings: 103, bio: "Born to a deaf mother, Leo learned American Sign Language at a very young age. He has always been very involeved in the deaf community, and after attending college to train as an interpreter, he continues to help in a professional capacity. He now lives in Brooklyn, NY, and has worked many large profile events across the NYC metro area."),
+    Interpreter(name: "Leo Ogden", location: "Brooklyn, NY", imageName: "Leo",yrsExper: 10, earlDate: "12/22/2021", typicalAvailibility: "Monday - Thursday, 9am - 10pm", rating: 4.3, numRatings: 103, bio: "Born to a deaf mother, Leo learned American Sign Language at a very young age. He has always been very involved in the deaf community, and after attending college to train as an interpreter, he continues to help in a professional capacity. He now lives in Brooklyn, NY, and has worked many large profile events across the NYC metro area."),
     Interpreter(name: "Rachel Moon", location: "Boston, MA", imageName: "Rachel", yrsExper: 5, earlDate: "12/01/2021", typicalAvailibility: "Friday - Sunday, 3pm - 12pm",rating: 4.9, numRatings: 20, bio: "Rachel has been a freelance interpreter in the greater Boston area for over 5 years. She specializes in lecture style events and often is hired at local colleges."),
     Interpreter(name: "Gail Smith", location: "San Diego, CA", imageName: "Gail", yrsExper: 20, earlDate: "12/16/2021", typicalAvailibility: "Monday - Friday, 9am - 5pm",rating: 3.8, numRatings: 233, bio: "Gail has been hard of hearing since she was a child. She learned ASL from a young age, and wanted to be able to help others who are not able to hear at all to better interact with the world. She has been an interpreter in the San Diago area for over 20 years, specializing in small venues and personal appointments."),
     Interpreter(name: "Sal DiMarco", location: "Tampa, FL", imageName: "Sal", yrsExper: 7, earlDate: "11/10/2021", typicalAvailibility: "Saturday - Sunday, 8am - 8pm",rating: 4.6, numRatings: 90, bio: "Sal went to college and intended to learn Sign Langauage as an elective course. In the process he met the love of his life, who happens to be deaf. Sal went on to major in ASL, and became an official interpreter 7 yearsa ago. He hopes to inspire more people like him to learn ASL."),
-    Interpreter(name: "Akanksa Patel", location: "Seattle, WA", imageName: "Ak", yrsExper: 29, earlDate: "11/21/2021", typicalAvailibility: "Monday - Friday, 6am - 3pm",rating: 4.8, numRatings: 368, bio: "Akaknsa has been teaching ASL to university students for over 30 years. In her free time she likes to further give back to the community by providing interpreter services. She works many different events, large and small.")
+    Interpreter(name: "Akanksa Patel", location: "Seattle, WA", imageName: "Ak", yrsExper: 29, earlDate: "11/21/2021", typicalAvailibility: "Monday - Friday, 6am - 3pm",rating: 4.8, numRatings: 368, bio: "Akaknsa has been teaching ASL to university students for over 30 years. In her free time she likes to further give back to the community by providing interpreting services. She works many different events, large and small.")
 ]
 
 struct ContentView: View {
     @State private var showWebView = false
+    @State private var firstname: String = ""
+    @State private var lastname: String = ""
+    @State private var username: String = ""
+    @State private var email: String = ""
+    @State private var phone: String = ""
+    @State private var street1: String = ""
+    @State private var street2: String = ""
+    @State private var city: String = ""
+    @State private var state: String = ""
+    @State private var zip: String = ""
+    @State private var fromScheduleTabOnHome = false
     init() {
         //Use this if NavigationBarTitle is with Large Font
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.init(displayP3Red: 112.0/256.0, green: 48.0/256.0, blue: 160.0/256.0, alpha: 1.0)]}
@@ -127,7 +138,16 @@ struct ContentView: View {
                         }}
                             .padding(.trailing)
                 }// put closing bracket here for scroll view
-                    .padding(.leading, 12.0).navigationBarItems( trailing: NavigationLink(destination: Account()) {
+                    .padding(.leading, 12.0).navigationBarItems( trailing: NavigationLink(destination: Account(firstname: $firstname,
+                                lastname: $lastname,
+                                username: $username,
+                                email: $email,
+                                phone: $phone,
+                                street1: $street1,
+                                street2: $street2,
+                                city: $city,
+                                state: $state,
+                                zip: $zip)) {
                         Text("Account").foregroundColor(Color(red: 112.0/256.0, green: 48.0/256.0, blue: 160.0/256.0, opacity: 1.0))
                     })
                 }.tabItem {
@@ -144,7 +164,7 @@ struct ContentView: View {
 //----------------------------------------------------------
                 //Interpreters Tab
                 NavigationView {
-                    InterpretersView()
+                    InterpretersView(fromScheduleTab: $fromScheduleTabOnHome)
                 }.tabItem {
                     Image(systemName: "person.crop.circle")
                     Text("Interpreters") }.tag(3)

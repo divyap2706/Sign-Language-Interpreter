@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct Account: View {
-    @State private var firstname = ""
-    @State private var lastname = ""
-    @State private var username = ""
-    @State private var email = ""
-    @State private var phone = ""
-    @State private var street1 = ""
-    @State private var street2 = ""
-    @State private var city = ""
-    @State private var state = ""
-    @State private var zip = ""
+    @Binding var firstname: String
+    @Binding var lastname: String
+    @Binding var username: String
+    @Binding var email: String
+    @Binding var phone: String
+    @Binding var street1: String
+    @Binding var street2: String
+    @Binding var city: String
+    @Binding var state: String
+    @Binding var zip: String
     @State private var showActionSheet = false
     
     private func isUserInformationValid() -> Bool {
@@ -74,11 +74,11 @@ struct Account: View {
                     Button(action: {
                         showActionSheet = true
                     }, label: {
-                        Text("Update Profile")
+                        Text("Update Profile").foregroundColor(Color(red: 112.0/256.0, green: 48.0/256.0, blue: 160.0/256.0, opacity: 1.0))
                     })
                     .actionSheet(isPresented: $showActionSheet){
-                        ActionSheet(title: Text("Confirm"),
-                                            message: Text("Confirm"),
+                        ActionSheet(title: Text("Confirm Account Changes"),
+                                            message: Text("These changes will be permanent."),
                                             buttons: [
                                                 .cancel(),
                                                 .destructive(
@@ -104,10 +104,18 @@ struct Account: View {
 
 struct Account_Previews: PreviewProvider {
     static var previews: some View {
-        Account()
+        Account(firstname: .constant(""),
+                lastname: .constant(""),
+                username: .constant(""),
+                email: .constant(""),
+                phone: .constant(""),
+                street1: .constant(""),
+                street2: .constant(""),
+                city: .constant(""),
+                state: .constant(""),
+                zip: .constant(""))
     }
 }
-
 
 /*
  // Create the AlertController and add its actions like button in ActionSheet
