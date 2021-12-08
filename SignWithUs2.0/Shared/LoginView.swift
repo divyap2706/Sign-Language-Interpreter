@@ -3,7 +3,7 @@
 //  HCI Project
 //
 //  Created by Christina Ye on 11/5/21.
-//
+//  Modified by Shreyas on 12/08/21
 
 import Foundation
 import SwiftUI
@@ -40,7 +40,7 @@ struct loginView: View {
                 Button {
                     currpage = "Login"
                 } label: {
-                Text("LOGIN")
+                Text("Login")
                             .font(.headline)
                             .foregroundColor(.white)
                             .padding()
@@ -50,7 +50,6 @@ struct loginView: View {
                 }
                 Spacer()
             }
-            
             HStack{
                 Spacer()
                 Button {
@@ -65,6 +64,33 @@ struct loginView: View {
                                 RoundedRectangle(cornerRadius: 15)
                                     .stroke(Color(red: 112.0/256.0, green: 48.0/256.0, blue: 160.0/256.0, opacity: 1.0), lineWidth: 2)
                             )
+                }
+                Spacer()
+            }
+            HStack{
+                Spacer()
+                Text("OR CONNECT WITH")
+                        .font(.headline)
+                        .foregroundColor(.black)
+                        //.padding()
+                        .frame(width: 320, height:40)
+                Spacer()
+            }
+            // Added third party sign in dummy options
+            HStack{
+                Spacer()
+                Button {
+                    currpage = "Other"
+                } label: {
+                Text("Google  |  Facebook  |  Apple")
+                            .font(.headline)
+                            .foregroundColor(Color(red: 112.0/256.0, green: 48.0/256.0, blue: 160.0/256.0, opacity: 1.0))
+                            .padding()
+                            .frame(width: 320, height: 40)
+                            /*.cornerRadius(15.0).overlay(
+                                RoundedRectangle(cornerRadius: 15)
+                                    .stroke(Color(red: 112.0/256.0, green: 48.0/256.0, blue: 160.0/256.0, opacity: 1.0), lineWidth: 2)
+                            )*/
                 }
                 Spacer()
             }

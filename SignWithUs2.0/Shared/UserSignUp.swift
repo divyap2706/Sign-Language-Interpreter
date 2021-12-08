@@ -30,19 +30,20 @@ struct UserSignUp: View {
                 .cornerRadius(5.0)
                 .padding(.bottom, 20)
             SecureField("Password", text: $password).padding().cornerRadius(5.0).padding(.bottom, 20)
+            SecureField("Confirm Password", text: $password).padding().cornerRadius(5.0).padding(.bottom, 20)
             
             Spacer()
-//            Button {
-//                showingHome = true
-//            } label: {
-//            Text("Sign Up")
-//                        .font(.headline)
-//                        .foregroundColor(.white)
-//                        .padding()
-//                        .frame(width: 320, height: 60)
-//                        .background(Color(red: 112.0/256.0, green: 48.0/256.0, blue: 160.0/256.0, opacity: 1.0))
-//                        .cornerRadius(15.0)
-//            }
+            Button {
+                //showingHome = true
+            } label: {
+            Text("Sign Up")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(width: 320, height: 60)
+                        .background(Color(red: 112.0/256.0, green: 48.0/256.0, blue: 160.0/256.0, opacity: 1.0))
+                        .cornerRadius(15.0)
+            }
             Spacer()
             HStack{
                 Spacer()
