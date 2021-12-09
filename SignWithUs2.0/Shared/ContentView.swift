@@ -42,6 +42,57 @@ var appointments = [
     Appointment(date: "11/15/2021", location: "Prospect Park, NY", interpreter: "Gail Smith"),
     Appointment(date: "12/22/2021", location: "Jersey City, NJ", interpreter: "Leo Ogden")]
 
+struct Booking: Hashable, Codable, Identifiable {
+    var date: Date?
+    var id = UUID()
+    var startTime: String
+    var endTime: String
+    var eventType: String
+    var additionalNotes: String
+    var street1: String
+    var street2: String
+    var city: String
+    var state: String
+    var zip: String
+    var interpreter: String
+    
+    func address() -> String {
+        if !self.street2.isEmpty {
+            let addPar1 = self.street1 + ", " + self.city
+            return  addPar1 + ", " + self.state + " " + self.zip
+        } else {
+            let addPar1 = self.street1 + ", " + self.street2 + ", " + self.city
+            return  addPar1 + ", " + self.state + " " + self.zip
+        }
+        
+    }
+    
+}
+
+var schedTabBooking = Booking(date: nil,
+                              startTime: "",
+                              endTime: "",
+                              eventType: "",
+                              additionalNotes: "",
+                              street1: "",
+                              street2: "",
+                              city: "",
+                              state: "",
+                              zip: "",
+                              interpreter: "")
+
+var interpTabBooking = Booking(date: nil,
+                              startTime: "",
+                              endTime: "",
+                              eventType: "",
+                              additionalNotes: "",
+                              street1: "",
+                              street2: "",
+                              city: "",
+                              state: "",
+                              zip: "",
+                              interpreter: "")
+
 struct Interpreter: Hashable, Codable, Identifiable {
     let name: String
     var id = UUID()
@@ -67,6 +118,7 @@ var interpreters = [
 ]
 
 struct ContentView: View {
+    @Binding var showConfirmedBooking: Bool
     @State private var showWebView = false
     @State private var firstname: String = ""
     @State private var lastname: String = ""
@@ -79,9 +131,15 @@ struct ContentView: View {
     @State private var state: String = ""
     @State private var zip: String = ""
     @State private var fromScheduleTabOnHome = false
-    init() {
+    @State private var fromScheduleTabToSched = true
+    @State var booking = interpTabBooking
+    @State var schedbooking = schedTabBooking
+    init(_ showConfirmedBooking: Binding<Bool>) {
         //Use this if NavigationBarTitle is with Large Font
-        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.init(displayP3Red: 112.0/256.0, green: 48.0/256.0, blue: 160.0/256.0, alpha: 1.0)]}
+        //UITableView.appearance().backgroundColor = .clear
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.init(displayP3Red: 112.0/256.0, green: 48.0/256.0, blue: 160.0/256.0, alpha: 1.0)]
+        self._showConfirmedBooking = showConfirmedBooking
+    }
     var body: some View {
             TabView(selection: .constant(1))      {
                 NavigationView {
@@ -156,7 +214,7 @@ struct ContentView: View {
 //----------------------------------------------------------
                 //Schedule Tab
                 NavigationView {
-                    ScheduleView().navigationBarTitle("Schedule")
+                    ScheduleView(booking: $schedbooking, showConfirmedBooking: $showConfirmedBooking, fromScheduleTab: $fromScheduleTabToSched).navigationTitle("Schedule")
 
                 }.tabItem {
                     Image(systemName: "calendar.badge.clock")
@@ -164,7 +222,7 @@ struct ContentView: View {
 //----------------------------------------------------------
                 //Interpreters Tab
                 NavigationView {
-                    InterpretersView(fromScheduleTab: $fromScheduleTabOnHome)
+                    InterpretersView(booking: $booking, fromScheduleTab: $fromScheduleTabOnHome,showConfirmedBooking: $showConfirmedBooking)
                 }.tabItem {
                     Image(systemName: "person.crop.circle")
                     Text("Interpreters") }.tag(3)
@@ -198,6 +256,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(.constant(false))
+        //
     }
 }

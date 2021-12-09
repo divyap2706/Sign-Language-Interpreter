@@ -8,38 +8,43 @@
 import SwiftUI
 
 struct BookingSummary: View {
-    @State private var dummyVar = false
+    @Binding var booking: Booking
+    @Binding var showConfirmedBooking: Bool
     var body: some View {
         ScrollView{
         VStack(alignment: .leading) {
                     
                 VStack(alignment: .leading) {
-                Text("Date and Time").bold().font(.title2).navigationBarTitle("Booking Summary").padding(.bottom, 3.0)
+                //Text("Date and Time").font(.title).foregroundColor(Color(red: 112.0/256.0, green: 48.0/256.0, blue: 160.0/256.0, opacity: 1.0))
                 
-                Text("Date").padding([.bottom])
-                Text("Start Time").padding([.bottom])
-                Text("End Time").padding([.bottom])
+                    Text("Date").bold().padding([.bottom], 1.0).navigationBarTitle("Booking Summary").padding(.bottom, 3.0)
+                    Text(booking.date ?? Date(), style: .date).padding([.bottom])
+                    Text("Start Time").bold().padding([.bottom], 1.0)
+                    Text(booking.startTime).padding([.bottom])
+                    Text("End Time").bold().padding([.bottom], 1.0)
+                    Text(booking.endTime).padding([.bottom])
                 
                 
             }
             VStack(alignment: .leading) {
-                Text("Event Details").bold().font(.title2).padding(.bottom, 3.0)
+                //Text("Event Details").font(.title).foregroundColor(Color(red: 112.0/256.0, green: 48.0/256.0, blue: 160.0/256.0, opacity: 1.0)).padding(.bottom, 3.0)
                 
-                Text("Event Type").padding([.bottom])
+                Text("Event Type").bold().padding([.bottom], 1.0)
+                Text(booking.eventType).padding([.bottom])
+                Text("Address").bold().padding([.bottom], 1.0)
+                Text(booking.address()).padding([.bottom])
+                Text("Additional Notes").bold().padding([.bottom], 1.0)
+                    Text(booking.additionalNotes).padding([.bottom])
+                Text("Interpreter").bold().padding([.bottom], 1.0)
                 
-                Text("Address").padding([.bottom])
-                
-                Text("Additional Notes").padding([.bottom])
-                
-                Text("Interpreter").bold().font(.title2).padding(.bottom, 3.0)
-                
-                Text("Interpreter").padding([.bottom])
+                Text(booking.interpreter).padding([.bottom], 30.0)
 
             }
             
+            
             HStack{
             Button {
-                dummyVar = true
+                showConfirmedBooking = true
             } label: {
                 Text("Confirm Booking").font(.headline)
                     .foregroundColor(.white)
@@ -58,7 +63,8 @@ struct BookingSummary: View {
 }
 
 struct BookingSummary_Previews: PreviewProvider {
+    @State static var previewBooking = interpTabBooking
     static var previews: some View {
-        BookingSummary()
+        BookingSummary(booking: $previewBooking, showConfirmedBooking: .constant(false))
     }
 }

@@ -10,10 +10,14 @@ import SwiftUI
 struct UserLoginWrapper: View {
     @Binding var currpage: String
     @State private var showingHome = false
+    @State private var showConfirmedBooking = false
     var body: some View {
         //return Group {
-            if showingHome {
-                    ContentView()
+            if showConfirmedBooking {
+                ConfirmedBooking(showConfirmedBooking: $showConfirmedBooking)
+                //
+            } else if showingHome {
+                ContentView($showConfirmedBooking)
             } else {
                 UserLogin(showingHome: $showingHome, currpage: $currpage)
             }

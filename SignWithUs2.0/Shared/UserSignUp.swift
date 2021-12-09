@@ -10,6 +10,7 @@ import SwiftUI
 
 struct UserSignUp: View {
     @Binding var currpage: String
+    //@Binding var showingHome: Bool
     @State var username: String = ""
     @State var password: String = ""
     @State var emailid: String = ""

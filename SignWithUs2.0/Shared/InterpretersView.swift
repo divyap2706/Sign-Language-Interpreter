@@ -11,7 +11,9 @@ import SwiftUI
 
 
 struct InterpretersView: View {
+    @Binding var booking: Booking
     @Binding var fromScheduleTab: Bool
+    @Binding var showConfirmedBooking: Bool
     @State private var searchText = ""
     @State private var searchby = ""
     
@@ -45,7 +47,7 @@ struct InterpretersView: View {
             else if (searchby == "Earliest Appointment"){return $0.earlDate.contains(searchText)}
             else{return true}
             })) { interpreter in
-                NavigationLink(destination: InterpreterDetail(fromScheduleTab: $fromScheduleTab, interpreter: interpreter)) {
+                NavigationLink(destination: InterpreterDetail(booking: $booking, fromScheduleTab: $fromScheduleTab, showConfirmedBooking: $showConfirmedBooking, interpreter: interpreter)) {
                 InterpreterRow(interpreter: interpreter)
                 }
             }
@@ -58,10 +60,10 @@ struct InterpretersView: View {
 
 
 struct InterpretersView_Previews: PreviewProvider {
-
+    @State static var previewBooking = interpTabBooking
     static var previews: some View {
 
-        InterpretersView(fromScheduleTab: .constant(false))
+        InterpretersView(booking: $previewBooking, fromScheduleTab: .constant(false), showConfirmedBooking: .constant(false))
 
     }
 

@@ -50,6 +50,7 @@ struct loginView: View {
                 }
                 Spacer()
             }
+            
             HStack{
                 Spacer()
                 Button {

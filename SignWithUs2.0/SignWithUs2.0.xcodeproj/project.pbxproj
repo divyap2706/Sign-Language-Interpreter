@@ -53,6 +53,8 @@
 		31900C532758688600E006EC /* UserLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31900C4E2758688600E006EC /* UserLogin.swift */; };
 		31900C542758688600E006EC /* UserSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31900C4F2758688600E006EC /* UserSignUp.swift */; };
 		31900C552758688600E006EC /* UserSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31900C4F2758688600E006EC /* UserSignUp.swift */; };
+		31C0509E276120B400173C69 /* ConfirmedBooking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C0509D276120B400173C69 /* ConfirmedBooking.swift */; };
+		31C0509F276120B400173C69 /* ConfirmedBooking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C0509D276120B400173C69 /* ConfirmedBooking.swift */; };
 		31C2D4B12760232200331CA7 /* UserForgotWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C2D4B02760232200331CA7 /* UserForgotWrapper.swift */; };
 		31C2D4B22760232200331CA7 /* UserForgotWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C2D4B02760232200331CA7 /* UserForgotWrapper.swift */; };
 		31C2D4B42760245000331CA7 /* UserForgot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C2D4B32760245000331CA7 /* UserForgot.swift */; };
@@ -94,6 +96,7 @@
 		31900C4D2758688600E006EC /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		31900C4E2758688600E006EC /* UserLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLogin.swift; sourceTree = "<group>"; };
 		31900C4F2758688600E006EC /* UserSignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSignUp.swift; sourceTree = "<group>"; };
+		31C0509D276120B400173C69 /* ConfirmedBooking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmedBooking.swift; sourceTree = "<group>"; };
 		31C2D4B02760232200331CA7 /* UserForgotWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserForgotWrapper.swift; sourceTree = "<group>"; };
 		31C2D4B32760245000331CA7 /* UserForgot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserForgot.swift; sourceTree = "<group>"; };
 		31C2D4B62760278500331CA7 /* PassResetSent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassResetSent.swift; sourceTree = "<group>"; };
@@ -160,6 +163,7 @@
 				31C2D4B32760245000331CA7 /* UserForgot.swift */,
 				31C2D4B62760278500331CA7 /* PassResetSent.swift */,
 				31C2D4B92760656300331CA7 /* BookingSummary.swift */,
+				31C0509D276120B400173C69 /* ConfirmedBooking.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -309,6 +313,7 @@
 				314814AC2738309200E0D7FD /* ContentView.swift in Sources */,
 				31900C522758688600E006EC /* UserLogin.swift in Sources */,
 				3121A78327434FAC00084882 /* AppointmentDetailViewStatic.swift in Sources */,
+				31C0509E276120B400173C69 /* ConfirmedBooking.swift in Sources */,
 				3121A78027434E4800084882 /* AppointmentDetailButtons.swift in Sources */,
 				311632CB275EEDB9003D5EC0 /* ScheduleLocationView.swift in Sources */,
 				31C2D4BA2760656300331CA7 /* BookingSummary.swift in Sources */,
@@ -343,6 +348,7 @@
 				314814AD2738309200E0D7FD /* ContentView.swift in Sources */,
 				31900C532758688600E006EC /* UserLogin.swift in Sources */,
 				3121A78427434FAC00084882 /* AppointmentDetailViewStatic.swift in Sources */,
+				31C0509F276120B400173C69 /* ConfirmedBooking.swift in Sources */,
 				3121A78127434E4800084882 /* AppointmentDetailButtons.swift in Sources */,
 				311632CC275EEDB9003D5EC0 /* ScheduleLocationView.swift in Sources */,
 				31C2D4BB2760656300331CA7 /* BookingSummary.swift in Sources */,

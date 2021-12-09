@@ -9,9 +9,12 @@ import SwiftUI
 
 
 struct InterpreterDetail: View {
+    @Binding var booking: Booking
     @Binding var fromScheduleTab: Bool
+    @Binding var showConfirmedBooking: Bool
     var interpreter: Interpreter
     @State private var dummyVar = false
+    @State var tag: Int? = nil
     
     private func bookButtonTitle(fromScheduleTab:Bool) -> String {
         if fromScheduleTab == false {
@@ -72,23 +75,33 @@ struct InterpreterDetail: View {
             }
             HStack{
             if fromScheduleTab {
-            NavigationLink(destination: BookingSummary()){
+ 
+                NavigationLink(destination: BookingSummary(booking: $booking, showConfirmedBooking: $showConfirmedBooking),tag: 1, selection: $tag){ EmptyView()}
+                Button(action: {
+                    booking.interpreter = interpreter.name
+                    self.tag = 1
+                }, label: {
+                    
                 Text(self.bookButtonTitle(fromScheduleTab: fromScheduleTab)).font(.headline)
                     .foregroundColor(.white)
                     .padding()
                     .frame(width: 320, height: 60)
                     .background(Color(red: 112.0/256.0, green: 48.0/256.0, blue: 160.0/256.0, opacity: 1.0))
                     .cornerRadius(15.0)
-            }
+            })
             } else {
-                NavigationLink(destination: ContentView()){
+                NavigationLink(destination: ScheduleView(booking: $booking, showConfirmedBooking: $showConfirmedBooking,fromScheduleTab: $fromScheduleTab), tag: 5, selection: $tag){EmptyView()}
+                Button(action:{
+                    booking.interpreter = interpreter.name
+                    self.tag = 5
+                }, label: {
                     Text(self.bookButtonTitle(fromScheduleTab: fromScheduleTab)).font(.headline)
                         .foregroundColor(.white)
                         .padding()
                         .frame(width: 320, height: 60)
                         .background(Color(red: 112.0/256.0, green: 48.0/256.0, blue: 160.0/256.0, opacity: 1.0))
                         .cornerRadius(15.0)
-                }
+                })
             }
             
 
@@ -107,6 +120,7 @@ struct InterpreterDetail: View {
             
         }
     }
+    
 }
 
 func starType(starInd: Int, numStars: Float) -> String {
@@ -131,11 +145,12 @@ func starType(starInd: Int, numStars: Float) -> String {
     }
 }
 
-struct InterpreterDetail_Previews: PreviewProvider {
 
+struct InterpreterDetail_Previews: PreviewProvider {
+    @State static var previewBooking = interpTabBooking
     static var previews: some View {
 
-        InterpreterDetail(fromScheduleTab: .constant(false),interpreter: interpreters[0])
+        InterpreterDetail(booking: $previewBooking, fromScheduleTab: .constant(false), showConfirmedBooking: .constant(false), interpreter: interpreters[0])
 
     }
 
