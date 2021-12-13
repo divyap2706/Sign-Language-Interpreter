@@ -81,14 +81,14 @@ struct InterpreterDetail: View {
                     .cornerRadius(15.0)
             }
             } else {
-                NavigationLink(destination: ContentView()){
+                /*NavigationLink(destination: ContentView()){
                     Text(self.bookButtonTitle(fromScheduleTab: fromScheduleTab)).font(.headline)
                         .foregroundColor(.white)
                         .padding()
                         .frame(width: 320, height: 60)
                         .background(Color(red: 112.0/256.0, green: 48.0/256.0, blue: 160.0/256.0, opacity: 1.0))
                         .cornerRadius(15.0)
-                }
+                }*/
             }
             
 

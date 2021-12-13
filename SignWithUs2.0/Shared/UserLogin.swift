@@ -44,7 +44,7 @@ struct UserLogin: View {
             Button {
                 showingHome = true
             } label: {
-                Text("LOGIN")
+                Text("Login")
                             .font(.headline)
                             .foregroundColor(.white)
                             .padding()

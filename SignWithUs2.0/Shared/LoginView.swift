@@ -67,6 +67,7 @@ struct loginView: View {
                 }
                 Spacer()
             }
+            Spacer()
             HStack{
                 Spacer()
                 Text("OR CONNECT WITH")
@@ -77,21 +78,13 @@ struct loginView: View {
                 Spacer()
             }
             // Added third party sign in dummy options
+            
             HStack{
                 Spacer()
-                Button {
-                    currpage = "Other"
-                } label: {
-                Text("Google  |  Facebook  |  Apple")
-                            .font(.headline)
-                            .foregroundColor(Color(red: 112.0/256.0, green: 48.0/256.0, blue: 160.0/256.0, opacity: 1.0))
-                            .padding()
-                            .frame(width: 320, height: 40)
-                            /*.cornerRadius(15.0).overlay(
-                                RoundedRectangle(cornerRadius: 15)
-                                    .stroke(Color(red: 112.0/256.0, green: 48.0/256.0, blue: 160.0/256.0, opacity: 1.0), lineWidth: 2)
-                            )*/
-                }
+                Image("sign_in").resizable()
+                    .padding(30)
+                        //.frame(width: 400, height: 300)
+                        .aspectRatio(contentMode: .fit)
                 Spacer()
             }
             Spacer()
