@@ -82,9 +82,9 @@
 		314814972738309100E0D7FD /* SignWithUs2_0App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignWithUs2_0App.swift; sourceTree = "<group>"; };
 		314814982738309100E0D7FD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		314814992738309200E0D7FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		3148149E2738309200E0D7FD /* SignWithUs2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SignWithUs2.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3148149E2738309200E0D7FD /* SignWithUs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SignWithUs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		314814A12738309200E0D7FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		314814A62738309200E0D7FD /* SignWithUs2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SignWithUs2.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		314814A62738309200E0D7FD /* SignWithUs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SignWithUs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		314814A82738309200E0D7FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		314814A92738309200E0D7FD /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		314814B827383D0E00E0D7FD /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
@@ -171,8 +171,8 @@
 		3148149F2738309200E0D7FD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3148149E2738309200E0D7FD /* SignWithUs2.0.app */,
-				314814A62738309200E0D7FD /* SignWithUs2.0.app */,
+				3148149E2738309200E0D7FD /* SignWithUs.app */,
+				314814A62738309200E0D7FD /* SignWithUs.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -197,9 +197,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3148149D2738309200E0D7FD /* SignWithUs2.0 (iOS) */ = {
+		3148149D2738309200E0D7FD /* SignWithUs (iOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 314814B22738309200E0D7FD /* Build configuration list for PBXNativeTarget "SignWithUs2.0 (iOS)" */;
+			buildConfigurationList = 314814B22738309200E0D7FD /* Build configuration list for PBXNativeTarget "SignWithUs (iOS)" */;
 			buildPhases = (
 				3148149A2738309200E0D7FD /* Sources */,
 				3148149B2738309200E0D7FD /* Frameworks */,
@@ -209,14 +209,14 @@
 			);
 			dependencies = (
 			);
-			name = "SignWithUs2.0 (iOS)";
+			name = "SignWithUs (iOS)";
 			productName = "SignWithUs2.0 (iOS)";
-			productReference = 3148149E2738309200E0D7FD /* SignWithUs2.0.app */;
+			productReference = 3148149E2738309200E0D7FD /* SignWithUs.app */;
 			productType = "com.apple.product-type.application";
 		};
-		314814A52738309200E0D7FD /* SignWithUs2.0 (macOS) */ = {
+		314814A52738309200E0D7FD /* SignWithUs (macOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 314814B52738309200E0D7FD /* Build configuration list for PBXNativeTarget "SignWithUs2.0 (macOS)" */;
+			buildConfigurationList = 314814B52738309200E0D7FD /* Build configuration list for PBXNativeTarget "SignWithUs (macOS)" */;
 			buildPhases = (
 				314814A22738309200E0D7FD /* Sources */,
 				314814A32738309200E0D7FD /* Frameworks */,
@@ -226,9 +226,9 @@
 			);
 			dependencies = (
 			);
-			name = "SignWithUs2.0 (macOS)";
+			name = "SignWithUs (macOS)";
 			productName = "SignWithUs2.0 (macOS)";
-			productReference = 314814A62738309200E0D7FD /* SignWithUs2.0.app */;
+			productReference = 314814A62738309200E0D7FD /* SignWithUs.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -248,7 +248,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 314814952738309000E0D7FD /* Build configuration list for PBXProject "SignWithUs2.0" */;
+			buildConfigurationList = 314814952738309000E0D7FD /* Build configuration list for PBXProject "SignWithUs" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -261,8 +261,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3148149D2738309200E0D7FD /* SignWithUs2.0 (iOS) */,
-				314814A52738309200E0D7FD /* SignWithUs2.0 (macOS) */,
+				3148149D2738309200E0D7FD /* SignWithUs (iOS) */,
+				314814A52738309200E0D7FD /* SignWithUs (macOS) */,
 			);
 		};
 /* End PBXProject section */
@@ -486,8 +486,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.SignTogether.SignWithUs2-0";
-				PRODUCT_NAME = SignWithUs2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SignTogether.SignWithUs;
+				PRODUCT_NAME = SignWithUs;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -507,8 +507,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.SignTogether.SignWithUs2-0";
-				PRODUCT_NAME = SignWithUs2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SignTogether.SignWithUs;
+				PRODUCT_NAME = SignWithUs;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -532,7 +532,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.SignTogether.SignWithUs2-0";
-				PRODUCT_NAME = SignWithUs2.0;
+				PRODUCT_NAME = SignWithUs;
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
 			};
@@ -554,7 +554,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.SignTogether.SignWithUs2-0";
-				PRODUCT_NAME = SignWithUs2.0;
+				PRODUCT_NAME = SignWithUs;
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
 			};
@@ -563,7 +563,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		314814952738309000E0D7FD /* Build configuration list for PBXProject "SignWithUs2.0" */ = {
+		314814952738309000E0D7FD /* Build configuration list for PBXProject "SignWithUs" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				314814B02738309200E0D7FD /* Debug */,
@@ -572,7 +572,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		314814B22738309200E0D7FD /* Build configuration list for PBXNativeTarget "SignWithUs2.0 (iOS)" */ = {
+		314814B22738309200E0D7FD /* Build configuration list for PBXNativeTarget "SignWithUs (iOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				314814B32738309200E0D7FD /* Debug */,
@@ -581,7 +581,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		314814B52738309200E0D7FD /* Build configuration list for PBXNativeTarget "SignWithUs2.0 (macOS)" */ = {
+		314814B52738309200E0D7FD /* Build configuration list for PBXNativeTarget "SignWithUs (macOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				314814B62738309200E0D7FD /* Debug */,
